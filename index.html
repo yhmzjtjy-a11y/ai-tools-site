@@ -3,88 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>极致之站</title>
+  <title>高级AI工具</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-sans text-gray-800 bg-white scroll-smooth">
+<body class="bg-white text-gray-900 font-sans">
 
-  <!-- Hero 首页 -->
-  <section class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center px-6">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">欢迎来到极致之站</h1>
-    <p class="text-xl md:text-2xl mb-8">展示你的作品与价值，让世界认识你</p>
-    <a href="#contact" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full text-lg font-semibold transition">立即联系</a>
-  </section>
+<!-- Hero -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-black to-gray-800 text-white">
+  <h1 class="text-5xl md:text-6xl font-bold mb-6">立即获取高级 AI 工具</h1>
+  <p class="text-xl md:text-2xl max-w-2xl mb-10 text-gray-300">
+    自动生成内容、提升效率、简单易用。数百用户已在使用。
+  </p>
+  <a href="#pricing" class="bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200">
+    立即开始
+  </a>
+</section>
 
-  <!-- 关于我 -->
-  <section id="about" class="py-20 px-6 max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-6">关于我</h2>
-    <p class="text-lg mb-6">我是一名热爱创造的专业人士，擅长设计和开发高质量的网站与应用，专注用户体验和视觉美感。</p>
-    <div class="flex flex-wrap justify-center gap-6">
-      <div class="bg-gray-100 p-6 rounded-lg w-60">网页设计</div>
-      <div class="bg-gray-100 p-6 rounded-lg w-60">前端开发</div>
-      <div class="bg-gray-100 p-6 rounded-lg w-60">用户体验</div>
+<!-- 功能区 -->
+<section class="py-20 px-6 max-w-5xl mx-auto text-center">
+  <h2 class="text-3xl font-bold mb-10">为什么选择我们</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="p-6 border rounded-lg">
+      <h3 class="font-bold mb-2">🚀 快速</h3>
+      <p class="text-gray-600">秒级生成内容，立即使用</p>
     </div>
-  </section>
-
-  <!-- 作品展示 -->
-  <section id="portfolio" class="py-20 px-6 bg-gray-50">
-    <h2 class="text-4xl font-bold text-center mb-12">作品展示</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="rounded overflow-hidden shadow-lg">
-        <img src="https://via.placeholder.com/400x300" alt="作品1" class="w-full">
-        <div class="p-4">
-          <h3 class="font-bold text-xl mb-2">作品1</h3>
-          <p class="text-gray-700">简短描述你的作品亮点和特点。</p>
-        </div>
-      </div>
-      <div class="rounded overflow-hidden shadow-lg">
-        <img src="https://via.placeholder.com/400x300" alt="作品2" class="w-full">
-        <div class="p-4">
-          <h3 class="font-bold text-xl mb-2">作品2</h3>
-          <p class="text-gray-700">简短描述你的作品亮点和特点。</p>
-        </div>
-      </div>
-      <div class="rounded overflow-hidden shadow-lg">
-        <img src="https://via.placeholder.com/400x300" alt="作品3" class="w-full">
-        <div class="p-4">
-          <h3 class="font-bold text-xl mb-2">作品3</h3>
-          <p class="text-gray-700">简短描述你的作品亮点和特点。</p>
-        </div>
-      </div>
+    <div class="p-6 border rounded-lg">
+      <h3 class="font-bold mb-2">🎯 精准</h3>
+      <p class="text-gray-600">结果高质量，适合实际使用</p>
     </div>
-  </section>
-
-  <!-- 用户评价 -->
-  <section id="testimonials" class="py-20 px-6 max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-12">用户评价</h2>
-    <div class="flex flex-col md:flex-row gap-8 justify-center">
-      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-80">
-        <p class="mb-4">“他的设计让我网站瞬间高级感十足，用户体验也很棒。”</p>
-        <p class="font-bold">张先生，企业主</p>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-80">
-        <p class="mb-4">“专业、高效，非常值得合作。”</p>
-        <p class="font-bold">李小姐，自由职业者</p>
-      </div>
+    <div class="p-6 border rounded-lg">
+      <h3 class="font-bold mb-2">💡 简单</h3>
+      <p class="text-gray-600">无需学习，打开即用</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 联系我 -->
-  <section id="contact" class="py-20 px-6 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center">
-    <h2 class="text-4xl font-bold mb-6">准备好开始了吗？</h2>
-    <p class="mb-8">填写下面表单，我会尽快联系你！</p>
-    <form class="max-w-xl mx-auto flex flex-col gap-4">
-      <input type="text" placeholder="姓名" class="p-3 rounded text-gray-800" required>
-      <input type="email" placeholder="邮箱" class="p-3 rounded text-gray-800" required>
-      <textarea placeholder="留言" class="p-3 rounded text-gray-800" rows="4" required></textarea>
-      <button type="submit" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold transition">发送消息</button>
-    </form>
-  </section>
+<!-- 用户信任区 -->
+<section class="bg-gray-50 py-20 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-10">用户反馈</h2>
+  <div class="max-w-4xl mx-auto space-y-6">
+    <div class="bg-white p-6 rounded-lg shadow">“非常好用，效率提升明显。” — 用户 A</div>
+    <div class="bg-white p-6 rounded-lg shadow">“比我想象的简单很多。” — 用户 B</div>
+  </div>
+</section>
 
-  <!-- 底部 -->
-  <footer class="py-6 text-center bg-gray-900 text-white">
-    <p>© 2026 极致之站. 保留所有权利.</p>
-  </footer>
+<!-- 价格/付费区 -->
+<section id="pricing" class="py-24 px-6 text-center bg-black text-white">
+  <h2 class="text-3xl font-bold mb-6">选择你的方案</h2>
+  <p class="text-gray-300 mb-12">一次付费，立即使用全部功能</p>
+  <div class="max-w-md mx-auto bg-white text-black rounded-lg p-8">
+    <h3 class="text-2xl font-bold mb-4">高级版</h3>
+    <p class="text-4xl font-bold mb-6">$9.99</p>
+    <ul class="text-left space-y-2 mb-6">
+      <li>✔ 无限使用</li>
+      <li>✔ 优先体验新功能</li>
+      <li>✔ 持续更新</li>
+    </ul>
+    <!-- Stripe/Gumroad/PayPal -->
+    <a href="https://your-payment-link.com" class="block bg-black text-white py-3 rounded font-bold">
+      立即购买
+    </a>
+  </div>
+</section>
+
+<!-- 底部 -->
+<footer class="text-center py-6 text-gray-500 text-sm">© 2026 高级AI工具</footer>
 
 </body>
 </html>
