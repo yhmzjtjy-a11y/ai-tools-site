@@ -1,78 +1,46 @@
 ---
-const tools = [
-  {
-    name: "AI Chat",
-    desc: "智能对话助手，支持学习/写作/代码",
-    url: "https://chat.openai.com"
-  },
-  {
-    name: "AI Image Generator",
-    desc: "文本生成图片工具",
-    url: "https://www.midjourney.com"
-  },
-  {
-    name: "AI Search",
-    desc: "下一代AI搜索引擎",
-    url: "https://www.perplexity.ai"
-  }
+import Header from '../components/Header.astro';
+import ToolCard from '../components/ToolCard.astro';
+import SearchBar from '../components/SearchBar.astro';
+import { useState } from 'astro/jsx-runtime';
+
+const allTools = [
+  { name: "ChatGPT", desc:"智能对话助手", url:"https://chat.openai.com", tag:"对话" },
+  { name: "Claude", desc:"AI写作助手", url:"https://claude.ai", tag:"对话" },
+  { name: "Perplexity", desc:"AI搜索引擎", url:"https://perplexity.ai", tag:"搜索" },
+  { name: "Midjourney", desc:"AI绘图工具", url:"https://midjourney.com", tag:"绘图" },
+  { name: "DALL·E", desc:"文本生成图片", url:"https://openai.com/dall-e", tag:"绘图" },
+  { name: "Notion AI", desc:"办公辅助AI", url:"https://www.notion.so/product/ai", tag:"生产力" }
 ];
+
+let filteredTools = [...allTools];
+
+function handleSearch(keyword) {
+  keyword = keyword.toLowerCase();
+  filteredTools = allTools.filter(t => t.name.toLowerCase().includes(keyword) || t.desc.toLowerCase().includes(keyword));
+}
 ---
 
 <html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AI Tools Hub</title>
-    <meta name="description" content="精选AI工具导航站" />
-    <style>
-      body {
-        font-family: system-ui;
-        margin: 0;
-        background: #0b0f19;
-        color: white;
-      }
-      header {
-        padding: 60px 20px;
-        text-align: center;
-      }
-      h1 {
-        font-size: 40px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
-        padding: 20px;
-      }
-      .card {
-        background: #151c2c;
-        padding: 16px;
-        border-radius: 12px;
-        transition: 0.2s;
-      }
-      .card:hover {
-        transform: translateY(-4px);
-      }
-      a {
-        color: #4da3ff;
-        text-decoration: none;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI工具导航站</title>
+  <meta name="description" content="高质量AI工具导航站" />
+</head>
 
-  <body>
-    <header>
-      <h1>AI Tools Hub</h1>
-      <p>一站式AI工具导航</p>
-    </header>
+<body style="margin:0; font-family:system-ui; background:#0d111f; color:white;">
+  <Header />
+  
+  <SearchBar onSearch={handleSearch} />
 
-    <div class="grid">
-      {tools.map(tool => (
-        <div class="card">
-          <h3>{tool.name}</h3>
-          <p>{tool.desc}</p>
-          <a href={tool.url} target="_blank">打开 →</a>
-        </div>
-      ))}
-    </div>
-  </body>
+  <div style="
+    display:grid; 
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); 
+    gap:20px; 
+    padding:20px;
+  ">
+    {filteredTools.map(tool => <ToolCard {...tool} />)}
+  </div>
+</body>
 </html>
