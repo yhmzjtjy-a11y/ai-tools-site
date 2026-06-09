@@ -1,28 +1,18 @@
 ---
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
 ---
 
 <html>
   <body style="max-width:900px;margin:auto;padding:20px;">
-    <h1>我的学习博客</h1>
-
-    <p>这里记录 HTML、CSS、JavaScript 和 Astro 知识。</p>
-
-    <h2>文章列表</h2>
+    <h1>博客文章</h1>
     <ul>
-      <li><a href="/blog/html-basics">HTML基础教程</a></li>
-      <li><a href="/blog/css-intro">CSS入门指南</a></li>
-      <li><a href="/blog/js-basics">JavaScript基础</a></li>
+      {posts.map(post => (
+        <li>
+          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))}
     </ul>
-
-    <h2>关于本站</h2>
-    <p><a href="/about">了解更多</a></p>
-
-    <h2>联系方式</h2>
-    <p><a href="/contact">联系我</a></p>
-
-    <!-- 广告位置示例 -->
-    <div style="margin-top:40px;">
-      <!-- 这里可以放 AdSense 代码 -->
-    </div>
   </body>
 </html>
