@@ -1,0 +1,35 @@
+---
+import Header from '../components/Header.astro';
+import ToolCard from '../components/ToolCard.astro';
+
+const tools = [
+  { name:"ChatGPT", desc:"智能对话助手", url:"https://chat.openai.com", tag:"对话" },
+  { name:"Claude", desc:"AI写作助手", url:"https://claude.ai", tag:"对话" },
+  { name:"Perplexity", desc:"AI搜索引擎", url:"https://perplexity.ai", tag:"搜索" },
+  { name:"Midjourney", desc:"AI绘图工具", url:"https://midjourney.com", tag:"绘图" },
+  { name:"DALL·E", desc:"文本生成图片", url:"https://openai.com/dall-e", tag:"绘图" },
+  { name:"Notion AI", desc:"办公辅助AI", url:"https://www.notion.so/product/ai", tag:"生产力" }
+];
+---
+
+<html lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI工具列表</title>
+  <meta name="description" content="AI工具列表页面" />
+</head>
+
+<body style="margin:0; font-family:system-ui; background:#0d111f; color:white;">
+  <Header />
+
+  <div style="
+    display:grid; 
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); 
+    gap:20px; 
+    padding:20px;
+  ">
+    {tools.map(tool => <ToolCard {...tool} />)}
+  </div>
+</body>
+</html>
