@@ -1,0 +1,10 @@
+---
+const { onSearch } = Astro.props;
+---
+
+<input
+  type="text"
+  placeholder="搜索工具..."
+  style="padding:10px 20px; border-radius:25px; border:none; width:100%; max-width:400px; margin:20px auto; display:block;"
+  oninput={(e) => onSearch(e.target.value)}
+/>
