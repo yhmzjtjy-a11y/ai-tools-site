@@ -1,0 +1,25 @@
+---
+const tools = [
+  { name: "ChatGPT", url: "https://chat.openai.com", tag: "Chat" },
+  { name: "Claude", url: "https://claude.ai", tag: "Chat" },
+  { name: "Perplexity", url: "https://perplexity.ai", tag: "Search" },
+  { name: "Midjourney", url: "https://midjourney.com", tag: "Image" }
+];
+---
+
+<html>
+<head>
+  <title>AI Tools List</title>
+</head>
+<body>
+  <h1>Tools</h1>
+
+  <ul>
+    {tools.map(t => (
+      <li>
+        <a href={t.url} target="_blank">{t.name}</a> - {t.tag}
+      </li>
+    ))}
+  </ul>
+</body>
+</html>
