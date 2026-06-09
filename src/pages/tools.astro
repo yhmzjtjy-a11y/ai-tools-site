@@ -1,25 +1,34 @@
 ---
+import Header from '../components/Header.astro';
+import ToolCard from '../components/ToolCard.astro';
+
 const tools = [
-  { name: "ChatGPT", url: "https://chat.openai.com", tag: "Chat" },
-  { name: "Claude", url: "https://claude.ai", tag: "Chat" },
-  { name: "Perplexity", url: "https://perplexity.ai", tag: "Search" },
-  { name: "Midjourney", url: "https://midjourney.com", tag: "Image" }
+  { name:"ChatGPT", desc:"智能对话助手", url:"https://chat.openai.com", tag:"对话" },
+  { name:"Claude", desc:"AI写作助手", url:"https://claude.ai", tag:"对话" },
+  { name:"Perplexity", desc:"AI搜索引擎", url:"https://perplexity.ai", tag:"搜索" },
+  { name:"Midjourney", desc:"AI绘图工具", url:"https://midjourney.com", tag:"绘图" },
+  { name:"DALL·E", desc:"文本生成图片", url:"https://openai.com/dall-e", tag:"绘图" },
+  { name:"Notion AI", desc:"办公辅助AI", url:"https://www.notion.so/product/ai", tag:"生产力" }
 ];
 ---
 
-<html>
+<html lang="zh">
 <head>
-  <title>AI Tools List</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI工具列表</title>
 </head>
-<body>
-  <h1>Tools</h1>
 
-  <ul>
-    {tools.map(t => (
-      <li>
-        <a href={t.url} target="_blank">{t.name}</a> - {t.tag}
-      </li>
-    ))}
-  </ul>
+<body style="margin:0; font-family:system-ui; background:#0d111f; color:white;">
+  <Header />
+
+  <div style="
+    display:grid; 
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); 
+    gap:20px; 
+    padding:20px;
+  ">
+    {tools.map(tool => <ToolCard {...tool} />)}
+  </div>
 </body>
 </html>
